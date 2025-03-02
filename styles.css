@@ -1,0 +1,699 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* Full-Screen Dark Background */
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark background */
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Animated Gradient Background */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #ff512f, #dd2476, #1d2b64);
+    background-size: 300% 300%;
+    animation: gradient 6s infinite alternate;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Logo Image */
+.logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparency */
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        font-size: 24px;
+    }
+}
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parallax Effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* Slide Styling */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+}
+
+.content h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Dots (Slide Navigation) */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: white;
+}
+/* Event Showcase Section */
+.event-showcase {
+    text-align: center;
+    background: #111;
+    padding: 50px 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade-in effect when scrolled into view */
+.event-showcase.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Event Grid with 4 Cards Per Row */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 30px; /* Increased gap for better spacing */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Event Card (Vertical Rectangle Shape) */
+.event-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 15px;
+    height: 350px; /* Adjusted height for vertical rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Image */
+.event-card img {
+    width: 100%;
+    height: 220px; /* Adjusted height */
+    object-fit: cover;
+    border-bottom: 3px solid #ffcc00;
+}
+
+/* Title */
+.event-card h3 {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    padding: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Hover Effect */
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .event-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row for small screens */
+    }
+}
+.register-btn {
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #ff6600, #ffcc00);
+    transform: scale(1.1);
+}
+.college-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #001f3f, #004080);
+    color: white;
+    padding: 60px;
+    width: 100%;
+    margin-top: 500px; /* Push it further down */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Center the content */
+.college-logo img {
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.college-details h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.college-details p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Make it appear on scroll */
+.show-college-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+.location-info {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.location-info h2 {
+    font-size: 2rem;
+    color: #001f3f;
+    margin-bottom: 20px;
+}
+
+.location-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.location-text {
+    max-width: 400px;
+    text-align: left;
+}
+
+.location-text p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.location-map iframe {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.faculty-section {
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #003366); /* Deep blue gradient */
+    padding: 60px 20px;
+    margin-top: 80px;
+    color: #fff; /* White text for contrast */
+}
+
+.faculty-section h2 {
+    font-size: 2.2rem;
+    color: #ffcc00; /* Goldish color to pop out */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.faculty-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.faculty-card {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white card */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.faculty-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+.faculty-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ffcc00; /* Matching border */
+}
+
+.faculty-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffcc00;
+}
+
+.faculty-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+/* Featured Events Section */
+.featured-events {
+    text-align: center;
+    background: #121212; /* Darker theme */
+    padding: 50px 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    /* REMOVE the animation properties */
+}
+
+
+/* Fade-in effect */
+.featured-events.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Event Grid (Only Two Cards) */
+.featured-event-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Event Card */
+.featured-event-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 15px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Image */
+.featured-event-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid #00c9ff; /* Neon Blue Accent */
+}
+
+/* Title */
+.featured-event-card h3 {
+    font-size: 1.2rem;
+    color: #00c9ff;
+    padding: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Register Button */
+.featured-event-card .register-btn {
+    background: #00c9ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.featured-event-card .register-btn:hover {
+    background: #009acc;
+}
+
+/* Hover Effect */
+.featured-event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 201, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-event-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-event-card {
+        width: 90%;
+    }
+}
+.custom-footer {
+    background: black;
+    color: white;
+    padding: 50px 30px; /* Increased padding */
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; /* Increased width */
+    margin: auto;
+    padding-bottom: 30px; /* Increased spacing */
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 140px; /* Increased logo size */
+}
+
+.footer-middle p {
+    font-size: 28px; /* Bigger text */
+    font-weight: bold;
+}
+
+.dot-indicator {
+    width: 14px; /* Increased size */
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.footer-btn {
+    background: transparent;
+    color: white;
+    border: 3px solid white; /* Thicker border */
+    padding: 12px 20px; /* Increased button size */
+    margin: 8px;
+    cursor: pointer;
+    font-size: 18px; /* Bigger text */
+}
+
+.footer-btn:hover {
+    background: white;
+    color: black;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px; /* More space at bottom */
+}
+
+.social-icons img {
+    width: 28px; /* Bigger social icons */
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+.footer-bottom p {
+    margin-top: 8px;
+    font-size: 18px; /* Increased font size */
+}
+
+.about-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: black; /* Keep the original background color */
+    color: white; /* Keep original text color */
+    font-family: Arial, sans-serif; /* Keep original font */
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-logo img {
+    width: 250px; /* Make images slightly bigger */
+    opacity: 0;
+    transform: translateX(-50px); /* Move left initially */
+    transition: all 0.8s ease-in-out;
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 20px; /* Keep text size similar but a bit more readable */
+    opacity: 0;
+    transform: translateX(50px); /* Move right initially */
+    transition: all 0.8s ease-in-out;
+}
+
+/* When in view, make them visible */
+.about-visible .about-logo img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-visible .about-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive for small screens */
+@media (max-width: 1024px) {
+    .about-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-logo img {
+        max-width: 320px; /* Adjust image size */
+    }
+    .about-text {
+        font-size: 1.6em; /* Adjust text size */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 80px 40px;
+    }
+    .about-section h2 {
+        font-size: 2.5em;
+    }
+    .about-content {
+        gap: 50px;
+    }
+    .about-logo img {
+        max-width: 250px;
+    }
+    .about-text {
+        font-size: 1.4em;
+    }
+}
+
+
