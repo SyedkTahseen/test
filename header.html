@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Tech Event</title>
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="imgs/symbol.webp" alt="TechFest Logo" class="logo-img"> 
+            TechFest 2025
+        </div>
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="header.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Workshops</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"></div>
+    </header>
+   <!-- Hero Section with Sliding Carousel -->
+   <section class="hero">
+    <div class="slider">
+        <div class="slide active" style="background-image: url('imgs/robo.png');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Welcome to <span>TechFest 2025</span></h2>
+                <p>Experience the future of innovation & technology.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('imgs/ai.webp');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>AI & Robotics</h2>
+                <p>Explore the world of Artificial Intelligence and Robotics.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('imgs/hack.avif');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Hackathon</h2>
+                <p>Code your way to success in our TechFest Hackathon.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="dots">
+        <span class="dot active" onclick="changeSlide(0)"></span>
+        <span class="dot" onclick="changeSlide(1)"></span>
+        <span class="dot" onclick="changeSlide(2)"></span>
+    </div>
+
+   <!-- Previous & Next Buttons -->
+<div class="slider-controls">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+</section>
+
+
+<section class="event-showcase" id="eventShowcase">
+    <h2>🔥 Explore TechFest 2025 Events</h2>
+    <div class="event-grid">
+        <div class="event-card">
+            <img src="imgs/robo.png" alt="Robotics">
+            <h3>🤖 Robotics Challenge</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/ai.jpg" alt="Hackathon">
+            <h3>💻 Hackathon</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/symbol.webp" alt="Gaming">
+            <h3>🎮 E-Sports Tournament</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/logo.png" alt="Cybersecurity">
+            <h3>🛡️ Cybersecurity Workshop</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/symbol.webp" alt="AI">
+            <h3>🤖 AI & ML Workshop</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/robo.png" alt="VR">
+            <h3>🕶️ Virtual Reality Expo</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/ai.webp" alt="IoT">
+            <h3>🌐 IoT Innovations</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/ai.webp" alt="AI Robot">
+            <h3>🔬 AI Robot Expo</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/logo.png" alt="Blockchain">
+            <h3>⛓️ Blockchain Summit</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+        <div class="event-card">
+            <img src="imgs/ai.webp" alt="Drones">
+            <h3>🚁 Drone Racing</h3>
+            <button class="register-btn">Register Now</button>
+        </div>
+    </div>
+</section>
+
+<section class="featured-events">
+    <h2>🎉 Online Featured Events</h2>
+    <div class="featured-event-grid">
+        <div class="featured-event-card">
+            <img src="imgs/ai.jpg" alt="Hackathon">
+            <h3>💻 National Hackathon</h3>
+            <button class="register-btn">Register</button>
+        </div>
+
+        <div class="featured-event-card">
+            <img src="imgs/symbol.webp" alt="Robotics">
+            <h3>🤖 Robotics Championship</h3>
+            <button class="register-btn">Register</button>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="faculty-section" id="facultySection">
+    <h2>👨‍🏫 Meet Our Faculty</h2>
+    <div class="faculty-grid">
+        <div class="faculty-card">
+            <img src="principal.jpg" alt="Principal">
+            <h3>Dr. Ramesh Kumar</h3>
+            <p>🎓 Principal, PTU</p>
+        </div>
+        <div class="faculty-card">
+            <img src="hod_cs.jpg" alt="HOD CS">
+            <h3>Prof. Anitha Sharma</h3>
+            <p>💻 HOD, Computer Science</p>
+        </div>
+        <div class="faculty-card">
+            <img src="hod_it.jpg" alt="HOD IT">
+            <h3>Prof. Manohar Reddy</h3>
+            <p>🖥️ HOD, Information Technology</p>
+        </div>
+        <div class="faculty-card">
+            <img src="imgs/ai.jpg" alt="Professor AI">
+            <h3>Dr. Priya Menon</h3>
+            <p>🤖 AI & ML Specialist</p>
+        </div>
+    </div>
+</section>
+<section class="location-info" id="locationSection">
+    <h2>📍 Our Location</h2>
+    <div class="location-content">
+        <div class="location-text">
+            <p><strong>Puducherry Technological University</strong></p>
+            <p>Pillaichavady, Puducherry - 605014, India</p>
+            <p>☎️ Contact: +91 12345 67890</p>
+            <p>📧 Email: info@ptu.edu.in</p>
+        </div>
+        <div class="location-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.481646952852!2d79.82156077482091!3d12.012436988481396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5362dd2c763e27%3A0x5b2cda9b9e227fc1!2sPuducherry%20Technological%20University!5e0!3m2!1sen!2sin!4v1711423054785!5m2!1sen!2sin" 
+                width="400" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <h2>About</h2>
+    <div class="about-content">
+        <div class="about-item">
+            <div class="about-logo">
+                <img src="imgs/ai.jpg" alt="Your Logo">
+            </div>
+            <div class="about-text">
+                <p><strong>Your Institute Name</strong> is a premier educational institution known for its 
+                <strong>academic excellence, state-of-the-art research, and industry-focused curriculum</strong>. 
+                Located in [Your Location], it fosters a culture of innovation, interdisciplinary learning, and entrepreneurship.</p>
+            </div>
+        </div>
+        <div class="about-item">
+            <div class="about-logo">
+                <img src="imgs/ai.jpg" alt="Your Logo">
+            </div>
+            <div class="about-text">
+                <p><strong>Your Institute Name</strong> is a premier educational institution known for its 
+                <strong>academic excellence, state-of-the-art research, and industry-focused curriculum</strong>. 
+                Located in [Your Location], it fosters a culture of innovation, interdisciplinary learning, and entrepreneurship.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="college-info" id="collegeSection">
+    <div class="college-logo">
+        <img src="imgs/ptu-logo.png" alt="College Logo">
+    </div>
+    <div class="college-details">
+        <h2>Puducherry Technological University</h2>
+        <p>Empowering Innovation & Excellence in Education.</p>
+        <p>Accredited by NAAC | AICTE Approved</p>
+    </div>
+</section>
+<footer class="custom-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="imgs/logo.png" alt="University Logo" class="footer-logo">
+            <p>TEC BLAZE 25</p>
+        </div>
+
+        <div class="footer-middle">
+            <p>See you on March 19th</p>
+            <div class="dot-indicator"></div>
+        </div>
+
+        <div class="footer-right">
+            <button class="footer-btn" onclick="location.href='#eventShowcase'">Events</button>
+            <button class="footer-btn">Contact</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-icons">
+            <a href="mailto:tahseensyed685@gmail.com"><img src="imgs/gmail.png" alt="Email"></a>
+            <a href="tel:+91 9704059830"><img src="imgs/phone.png" alt="Phone"></a>
+            <a href="#locationSection">
+                <img src="imgs/location.png" alt="imgs/location.png">
+            </a> 
+            <a href="https://www.instagram.com/syed_khizr_tahseen/"><img src="imgs/insta.png" alt="Instagram"></a>
+        </div>
+        <p>Contact Us</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1194 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* Full-Screen Dark Background */
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark background */
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Animated Gradient Background */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #ff512f, #dd2476, #1d2b64);
+    background-size: 400% 400%;
+    animation: gradient 6s infinite alternate;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Logo Image */
+.logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links Styling */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparency */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+
+/* Hover Effect */
+.nav-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjusted */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        font-size: 24px;
+    }
+
+    /* Disable hover effects for touch devices */
+    .nav-links a:hover {
+        transform: none;
+        box-shadow: none;
+        background: none;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        background-attachment: scroll;
+    }
+}
+
+/* Parallax Effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+@supports not (backdrop-filter: blur(3px)) {
+    .hero::before {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* Slide Styling */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .hero::before {
+        backdrop-filter: none;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .content {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Logo Image */
+.logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparency */
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        font-size: 24px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parallax Effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* Slide Styling */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Active Slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.content h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+    .content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Dots (Slide Navigation) */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Event Showcase Section */
+.event-showcase {
+    text-align: center;
+    background: #111;
+    padding: 50px 20px;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-in, transform 0.8s ease-out 0.2s;
+}
+
+/* Fade-in effect when scrolled into view */
+.event-showcase.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Event Grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Event Grid */
+@media (max-width: 1024px) {
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .event-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Event Card - Vertical Rectangle */
+.event-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 15px;
+    height: 360px; /* Slightly increased for better content spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Event Image */
+.event-card img {
+    width: 100%;
+    height: 230px; /* Slightly increased for better image visibility */
+    object-fit: cover;
+    border-bottom: 4px solid #ffcc00; /* Slightly thicker for emphasis */
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Image */
+.event-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Event Title */
+.event-card h3 {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    padding: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    font-weight: 600;
+}
+
+/* Hover Effect - Card */
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Register Button */
+.register-btn {
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    padding: 12px 18px; /* Increased padding for a better button feel */
+    margin-top: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect - Button */
+.register-btn:hover {
+    background: linear-gradient(135deg, #ff6600, #ffcc00);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+}
+
+/* Responsive Event Grid */
+@media (max-width: 1024px) {
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile */
+    }
+}
+
+/* 🌟 College Info Section (Responsive) */
+.college-info {
+    display: flex;
+    flex-direction: column; /* Stack items on small screens */
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #001f3f, #004080);
+    color: white;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto; /* Center it properly */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Center text for smaller screens */
+}
+
+/* 🌟 Make it Visible on Scroll */
+.show-college-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 Adjust Logo Size for Smaller Screens */
+.college-logo img {
+    width: 100px; /* Reduce size for mobile */
+    height: auto;
+    margin-bottom: 15px; /* Space below logo */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.college-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* 🌟 Adjust Text Sizing */
+.college-details h2 {
+    font-size: 1.8rem;
+}
+
+.college-details p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 90%; /* Keep text readable */
+    line-height: 1.5;
+}
+
+/* 🌟 Mobile Responsive Fix */
+@media (max-width: 768px) {
+    .college-info {
+        flex-direction: column;
+        padding: 30px 15px;
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    .college-logo img {
+        width: 80px; /* Further reduce logo size */
+    }
+
+    .college-details h2 {
+        font-size: 1.6rem;
+    }
+
+    .college-details p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+/* Location Section */
+.location-info {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 60px 20px;
+    margin-top: 80px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Location Title */
+.location-info h2 {
+    font-size: 2rem;
+    color: #001f3f;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Location Content */
+.location-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .college-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 30px;
+    }
+    .college-logo img {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .college-details h2 {
+        font-size: 1.8rem;
+    }
+    .college-details p {
+        font-size: 1rem;
+    }
+    .location-info h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Location Text */
+.location-text {
+    max-width: 400px;
+    text-align: center; /* Center-align for mobile */
+    margin: 0 auto; /* Ensures it stays centered */
+}
+
+.location-text p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Map Styling */
+.location-map iframe {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it scales properly */
+    max-width: 600px; /* Prevents excessive stretching */
+}
+
+/* Faculty Section */
+.faculty-section {
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    padding: 60px 20px;
+    margin-top: 80px;
+    color: #fff;
+}
+
+.faculty-section h2 {
+    font-size: 2.2rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Faculty Grid */
+.faculty-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Faculty Card */
+.faculty-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 90%; /* Scales properly on smaller screens */
+    max-width: 250px; /* Keeps it readable */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.faculty-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Faculty Image */
+.faculty-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ffcc00;
+}
+
+/* Faculty Name */
+.faculty-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffcc00;
+}
+
+/* 📱 Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .faculty-grid {
+        flex-direction: column; /* Stack cards on small screens */
+        align-items: center;
+    }
+    
+    .faculty-card {
+        max-width: 90%; /* Makes cards fit better */
+    }
+
+    .location-text {
+        text-align: center; /* Better alignment for small screens */
+        max-width: 90%;
+    }
+
+    .location-map iframe {
+        width: 100%; /* Ensures it fits the screen */
+        height: 250px; /* Adjust height for small devices */
+    }
+}
+
+
+/* Faculty Card Text */
+.faculty-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Featured Events Section */
+.featured-events {
+    text-align: center;
+    background: #121212; /* Darker theme */
+    padding: 50px 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Event Grid */
+.featured-event-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Event Card */
+.featured-event-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 15px;
+    width: 90%; /* Makes it responsive */
+    max-width: 400px; /* Prevents it from getting too big */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Image */
+.featured-event-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid #00c9ff; /* Neon Blue Accent */
+}
+
+/* Title */
+.featured-event-card h3 {
+    font-size: 1.2rem;
+    color: #00c9ff;
+    padding: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Register Button */
+.featured-event-card .register-btn {
+    background: #00c9ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    width: 80%; /* Ensures it scales properly on smaller screens */
+    margin: 10px auto; /* Centers it */
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .featured-event-grid {
+        flex-direction: column; /* Stack events on small screens */
+        align-items: center;
+    }
+
+    .featured-event-card {
+        width: 90%; /* Adjusts width for smaller screens */
+    }
+
+    .featured-event-card .register-btn {
+        width: 90%; /* Makes button fill container */
+    }
+}
+
+/* Footer Section */
+.custom-footer {
+    background: black;
+    color: white;
+    padding: 50px 30px; /* Increased padding */
+    font-family: Arial, sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; /* Increased width */
+    margin: auto;
+    padding-bottom: 30px; /* Increased spacing */
+}
+
+/* Footer Sections */
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+/* Footer Logo */
+.footer-logo {
+    max-width: 140px; /* Increased logo size */
+}
+
+/* Footer Text */
+.footer-middle p {
+    font-size: 28px; /* Bigger text */
+    font-weight: bold;
+}
+
+/* Dot Indicator */
+.dot-indicator {
+    width: 14px; /* Increased size */
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 8px auto; /* Centers dot indicator */
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .footer-logo {
+        max-width: 100px; /* Reduce size for smaller screens */
+    }
+
+    .footer-middle p {
+        font-size: 22px; /* Reduce text size */
+    }
+
+    .dot-indicator {
+        width: 10px; /* Reduce dot size */
+        height: 10px;
+    }
+}
+
+
+/* Footer Button */
+.footer-btn {
+    background: transparent;
+    color: white;
+    border: 3px solid white; /* Thicker border */
+    padding: 12px 20px; /* Increased button size */
+    margin: 8px;
+    cursor: pointer;
+    font-size: 18px; /* Bigger text */
+}
+
+.footer-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px; /* More space at bottom */
+}
+
+/* Social Icons */
+.social-icons img {
+    width: 28px; /* Bigger social icons */
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+/* Footer Bottom Text */
+.footer-bottom p {
+    margin-top: 8px;
+    font-size: 18px; /* Increased font size */
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* About Logo */
+.about-logo img {
+    width: 250px; /* Slightly bigger */
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-in-out;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .footer-btn {
+        padding: 8px 15px; /* Reduce button size */
+        font-size: 16px;
+    }
+
+    .social-icons img {
+        width: 24px; /* Smaller icons */
+        margin: 0 8px; /* Reduce spacing */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .about-logo img {
+        width: 200px; /* Reduce size for mobile */
+        transform: translateX(0); /* Remove initial animation offset */
+    }
+}
+
+
+.about-text {
+    max-width: 600px;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-in-out;
+    will-change: transform, opacity; /* ✅ Animation Optimization */
+}
+
+/* When in view, make them visible */
+.about-visible .about-logo img,
+.about-visible .about-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-logo img {
+        max-width: 300px; /* ✅ Slightly Smaller */
+    }
+    .about-text {
+        font-size: 1.5em; /* ✅ Adjust Text Size */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 30px; /* ✅ Adjust Padding */
+    }
+    .about-section h2 {
+        font-size: 2.2em; /* ✅ Better Scaling */
+    }
+    .about-content {
+        gap: 40px;
+    }
+    .about-logo img {
+        max-width: 220px; /* ✅ More Responsive */
+    }
+    .about-text {
+        font-size: 1.3em; /* ✅ Reduce for Smaller Screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 20px; /* ✅ Better for Small Screens */
+    }
+    .about-text {
+        font-size: 1.1em; /* ✅ Ensure Readability */
+    }
+    .about-logo img {
+        max-width: 180px; /* ✅ Smaller for Mobile */
+    }
+}
+/*for banner arrow buttons*/
+/* Slider Navigation Buttons */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.slider-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+/*for smooth slide*/
+.featured-events {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.featured-events.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.featured-event-card {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-event-card:hover {
+    transform: scale(1);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
