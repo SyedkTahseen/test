@@ -194,3 +194,12 @@ document.addEventListener("scroll", function () {
         }
     }
 });
+// Select the menu toggle and navigation links
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// Add event listener to the menu toggle to handle click
+menuToggle.addEventListener('click', function() {
+    // Toggle the 'show' class to display/hide the menu
+    navLinks.classList.toggle('show');
+});
