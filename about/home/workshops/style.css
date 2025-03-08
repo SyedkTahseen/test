@@ -1,0 +1,208 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a; /* Dark background */
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff6f61, #ffcc00);
+    padding: 10px 15px; /* Further reduced padding for mobile */
+    text-align: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Reduced letter spacing for mobile */
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Content Section */
+.content {
+    padding: 90px 15px 30px; /* Adjusted padding for mobile */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+    color: #ffcc00; /* Yellow for headings */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Reduced letter spacing for mobile */
+    margin-bottom: 15px; /* Reduced margin for mobile */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+.content p {
+    font-size: 0.95rem; /* Smaller font size for mobile */
+    color: #ddd;
+    margin-bottom: 15px; /* Reduced margin for mobile */
+}
+
+/* Workshop Grid */
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for mobile */
+    gap: 15px; /* Reduced gap for mobile */
+    margin-top: 15px; /* Reduced margin for mobile */
+}
+
+.workshop-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 15px; /* Reduced padding for mobile */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.workshop-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+    border-color: #ffcc00;
+}
+
+.workshop-card img {
+    width: 100%;
+    height: 140px; /* Reduced height for mobile */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Reduced margin for mobile */
+}
+
+.workshop-card h3 {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    color: #ffcc00;
+    margin: 10px 0; /* Adjusted margin for mobile */
+}
+
+.workshop-card p {
+    font-size: 0.85rem; /* Smaller font size for mobile */
+    color: #aaa;
+    margin: 5px 0;
+}
+
+.register-btn {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Reduced padding for mobile */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Reduced margin for mobile */
+    font-size: 0.85rem; /* Smaller font size for mobile */
+}
+
+.register-btn:hover {
+    background: #ff3b2f;
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonial-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for mobile */
+    gap: 15px; /* Reduced gap for mobile */
+    margin-top: 20px; /* Adjusted margin for mobile */
+}
+
+.testimonial {
+    background: #1a1a1a;
+    padding: 15px; /* Reduced padding for mobile */
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+    border-color: #ffcc00;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 10px;
+    font-size: 0.85rem; /* Smaller font size for mobile */
+}
+
+.testimonial h4 {
+    color: #ffcc00;
+    font-size: 0.95rem; /* Smaller font size for mobile */
+}
+
+/* Call-to-Action Button */
+.cta-btn {
+    background: linear-gradient(135deg, #ff6f61, #ffcc00);
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Reduced padding for mobile */
+    font-size: 0.95rem; /* Smaller font size for mobile */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 20px auto; /* Adjusted margin for mobile */
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 10px; /* Reduced padding for mobile */
+    margin-top: 30px; /* Adjusted margin for mobile */
+    font-size: 0.75rem; /* Smaller font size for mobile */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+
+    .content h2 {
+        font-size: 1.6rem; /* Even smaller font size for very small screens */
+    }
+
+    .workshop-card h3 {
+        font-size: 1.1rem; /* Even smaller font size for very small screens */
+    }
+
+    .testimonial h4 {
+        font-size: 0.85rem; /* Even smaller font size for very small screens */
+    }
+
+    .cta-btn {
+        font-size: 0.85rem; /* Even smaller font size for very small screens */
+        padding: 8px 16px; /* Adjusted padding for very small screens */
+    }
+}
