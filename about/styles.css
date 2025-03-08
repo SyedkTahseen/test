@@ -281,3 +281,166 @@ footer {
         padding: 10px 20px; /* Adjusted padding for very small screens */
     }
 }
+/* Footer */
+.custom-footer {
+    background: #000; /* Dark background */
+    color: white;
+    padding: 40px 20px; /* Padding for the entire footer */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    border-top: 2px solid #00c9ff; /* Neon blue border */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px; /* Space between container and bottom section */
+}
+
+/* Footer Left Section */
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and text */
+}
+
+.footer-logo {
+    width: 60px; /* Logo size */
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.footer-left p {
+    font-size: 1.2rem;
+    color: #00c9ff; /* Neon blue text */
+    font-weight: bold;
+}
+
+/* Footer Middle Section */
+.footer-middle {
+    text-align: center;
+}
+
+.footer-middle p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px; /* Space between text and dot */
+}
+
+.dot-indicator {
+    width: 10px; /* Dot size */
+    height: 10px;
+    background: #00c9ff; /* Neon blue dot */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Footer Right Section */
+.footer-right {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+}
+
+.footer-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white; /* White border */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px; /* Space above social icons */
+    border-top: 1px solid #333; /* Divider line */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 15px; /* Space below icons */
+}
+
+.social-icons img {
+    width: 28px; /* Icon size */
+    height: 28px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Hover effect */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1rem;
+    color: #00c9ff; /* Neon blue text */
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 20px; /* Space between sections */
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column; /* Stack logo and text vertically */
+    }
+
+    .footer-middle p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .footer-btn {
+        padding: 8px 16px; /* Smaller buttons for mobile */
+        font-size: 0.9rem;
+    }
+
+    .social-icons img {
+        width: 24px; /* Smaller icons for mobile */
+        height: 24px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-left p {
+        font-size: 1rem; /* Even smaller font size for very small screens */
+    }
+
+    .footer-middle p {
+        font-size: 0.9rem; /* Even smaller font size for very small screens */
+    }
+
+    .footer-btn {
+        padding: 6px 12px; /* Even smaller buttons for very small screens */
+        font-size: 0.8rem;
+    }
+
+    .social-icons img {
+        width: 20px; /* Even smaller icons for very small screens */
+        height: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem; /* Even smaller font size for very small screens */
+    }
+}
